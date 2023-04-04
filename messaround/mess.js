@@ -64,7 +64,7 @@ startGame = () => {
 
 getNewQuestion = () => {
   if (availableQuestions.length === 0 || questionCounter >= maxQuestions) {
-    return window.location.assign("/end.html")
+    return window.location.assign("highscores.html")
   }
   questionCounter++;
   const questionIndex = Math.floor(Math.random() * availableQuestions.length);
@@ -88,6 +88,7 @@ choices.forEach(choice => {
     acceptingAnswers = false;
     const selectedChoice = event.target;
     const selectedAnswer = selectedChoice.dataset["number"];
+
     console.log(selectedAnswer);
     getNewQuestion();
 
