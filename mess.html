@@ -4,12 +4,17 @@
     <meta charset="UTF-8">
     <meta http-equiv="X-UA-Compatible" content="IE=edge">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>Document</title>
+    <title>Coding Quiz</title>
+    <link rel="stylesheet" type="text/css" href="messaround/style.css" />
 </head>
 <body>
+    <h class="header">Coding Quiz Challenge</h>
+        <p class="explanation">Try to answer the following code-related questions within the time limit. Keep in mind that incorrect answers will penalize your score/time by ten seconds!</p>
     <div class="container">
         <div id="game" class="justify center flex-column">
+            <button id="start">Start</button>
             <h2 id="question">Which choice is correct?</h2>
+            <div id="timer"></div>
             <div class="choice-container">
                 <p class="choice-prefix">A</p>
                 <p class="choice-text" data-number="1">Choice 1</p>
@@ -28,6 +33,6 @@
             </div>
         </div>
     </div>
-    <script src="mess.js"></script>
+    <script src="messaround/mess.js"></script>
 </body>
 </html>

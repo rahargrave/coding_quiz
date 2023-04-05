@@ -1,5 +1,6 @@
 const question = document.getElementById("question");
 const choices = Array.from(document.getElementsByClassName("choice-text"));
+const timeEl = document.getElementById("timer");
 console.log(choices);
 
 var currentQuestion = {};
@@ -51,10 +52,32 @@ var questions = [
   }    
 ]
 
-const correctBonus = 10;
 const maxQuestions = 5;
 
+document.getElementById("start").onclick = function generateQuiz(){
+  console.log("start");
+
+  //removes start
+  const element = document.getElementById("start");
+  element.remove();
+  var count = 10;
+  var timer = setInterval(function() {
+    console.log(count);
+    count--;
+    timeEl.textContent = count + " seconds left";
+    if(count === 0) {
+    stopInterval()
+    timeEl.textContent = "Out of TIME!";
+    }
+    }, 1000);
+    
+  var stopInterval = function() {
+    console.log('time is up!');
+    clearInterval(timer);
+  }  
+
 startGame = () => {
+  
   questionCounter = 0;
   score = 0
   availableQuestions = [...questions];
@@ -96,3 +119,4 @@ choices.forEach(choice => {
 })
 
 startGame();
+}
